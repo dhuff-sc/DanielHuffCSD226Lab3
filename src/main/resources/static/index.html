@@ -121,9 +121,9 @@
 </footer>
     <script>
         var accessToken = localStorage.getItem("accessToken");
-        if (accessToken == null) {
-            alert("accessToken is null")
-            accessToken = "";
+        if (accessToken == null || accessToken == "") {
+            alert("No accessToken, garbageToken will be used.")
+            accessToken = "garbageToken";
         }
         document.body.addEventListener('htmx:configRequest', function(evt) {
             evt.detail.headers["Authorization"] = "Bearer " + accessToken;
