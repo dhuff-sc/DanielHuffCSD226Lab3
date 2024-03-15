@@ -119,6 +119,12 @@
 <footer class="container-fluid text-center">
     <p>Footer Text</p>
 </footer>
+    <script>
+        document.body.addEventListener('htmx:configRequest', function(evt) {
+            alert(accessToken)
+            evt.detail.headers["Authorization"] = "Bearer " + accessToken;
+        });
+    </script>
 
 </body>
 </html>

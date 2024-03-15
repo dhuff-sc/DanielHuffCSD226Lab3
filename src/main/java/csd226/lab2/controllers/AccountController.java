@@ -48,7 +48,7 @@ public class AccountController {
 
             AuthResponse response = new AuthResponse(account.getEmail(), accessToken);
 
-            return ResponseEntity.ok().body(response);
+            return ResponseEntity.ok().body(response + "<script>alert('setting var \\\"accessToken\\\"');var accessToken='" + accessToken + "';</script>");
         } catch( Exception ex) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
